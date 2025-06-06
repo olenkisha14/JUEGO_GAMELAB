@@ -1,0 +1,36 @@
+﻿title: Options
+position: 9,-155
+---
+Ahora veremos la funcionalidad de las opciones en YarnSpinner.
+Chrom: ¿A qué te refieres?
+Cherche: Yo creo que son las elecciones que podemos tomar en el diálogo.
+Cherche: ¿Te gusta el chocolate?
+-> Chrom: Sí, me encanta el chocolate.
+    <<jump Chocolate_Like>>
+-> Chrom: No, para nada.
+    <<jump Chocolate_Dislike>>
+===
+
+title: Chocolate_Like
+position: -131,132
+---
+Cherche: ¿Qué tanto dirías que te gusta el chocolate en una escala del 1 al 10?
+-> Chrom: Diría que un 10.
+    Cherche: ¡Wow! ¡Eso es mucho!
+-> Chrom: Diría que un 5.
+    Cherche: ¡Eso es un poco menos de lo que esperaba!
+-> Chrom: Diría que un 1.
+    Cherche: ¡Vaya! ¡Eso es muy poco! ¿Por qué no te gusta el chocolate?
+===
+
+title: Chocolate_Dislike
+position: 143,131
+---
+Cherche: ¿Por qué no te gusta el chocolate?
+-> Chrom: No me gusta porque es muy dulce.
+    Cherche: Entiendo, a algunas personas no les gusta lo dulce.
+-> Chrom: No me gusta porque es amargo.
+    Cherche: Ah, eso es interesante. A mí me gusta el chocolate amargo.
+-> Chrom: No me gusta porque es muy grasoso.
+    Cherche: Eso es cierto, el chocolate puede ser un poco grasoso a veces.
+===
