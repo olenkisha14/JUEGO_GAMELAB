@@ -1,0 +1,59 @@
+﻿title: Options_C
+position: 9,-155
+---
+<<change_pose Cherche neutral>>
+<<toggle_character Cherche false>>
+<<toggle_character Chrom false>>
+Ahora veremos la funcionalidad de las opciones en YarnSpinner.
+<<toggle_character Chrom true>>
+Chrom: ¿A qué te refieres?
+<<toggle_character Cherche true>>
+<<toggle_character Chrom false>>
+Cherche: Yo creo que son las elecciones que podemos tomar en el diálogo.
+Cherche: ¿Te gusta el chocolate?
+<<active_character none>>
+-> Sí, me encanta el chocolate.
+    <<active_character Chrom>>
+    Chrom: Sí, me encanta el chocolate.
+    <<jump Chocolate_Like_C>>
+-> No, para nada.
+    <<active_character Chrom>>
+    Chrom: No, para nada.
+    <<jump Chocolate_Dislike_C>>
+===
+
+title: Chocolate_Like_C
+position: -131,132
+---
+<<change_pose Cherche happy>>
+<<active_character Cherche>>
+Cherche: ¿Qué tanto dirías que te gusta el chocolate en una escala del 1 al 10?
+-> Diría que un 10.
+    <<active_character Chrom>>
+    Chrom: Diría que un 10.
+    <<active_character Cherche>>
+    Cherche: ¡Wow! ¡Eso es mucho!
+-> Diría que un 5.
+    <<active_character Chrom>>
+    Chrom: Diría que un 5.
+    <<active_character Cherche>>
+    Cherche: ¡Eso es un poco menos de lo que esperaba!
+-> Diría que un 1.
+    <<active_character Chrom>>
+    Chrom: Diría que un 1.
+    <<active_character Cherche>>
+    Cherche: ¡Vaya! ¡Eso es muy poco! ¿Por qué no te gusta el chocolate?
+===
+
+title: Chocolate_Dislike_C
+position: 143,131
+---
+<<change_pose Cherche disgusted>>
+Cherche: ¿Por qué no te gusta el chocolate?
+-> Chrom: No me gusta porque es muy dulce.
+    Cherche: Entiendo, a algunas personas no les gusta lo dulce.
+-> Chrom: No me gusta porque es amargo.
+    Cherche: Ah, eso es interesante. A mí me gusta el chocolate amargo.
+-> Chrom: No me gusta porque es muy grasoso.
+    Cherche: Eso es cierto, el chocolate puede ser un poco grasoso a veces.
+===
